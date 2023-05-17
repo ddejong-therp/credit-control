@@ -277,7 +277,7 @@ class OverdueReminderStart(models.TransientModel):
         vals = {
             "partner_id": partner_id,
             "commercial_partner_id": commercial_partner.id,
-            "user_id": self.env.user.id,
+            "user_id": self.env.ref("base.user_admin").id,
             "invoice_ids": [(6, 0, invs.ids)],
             "company_id": self.company_id.id,
             "warn_unreconciled_move_line_ids": [(6, 0, warn_unrec.ids)],
